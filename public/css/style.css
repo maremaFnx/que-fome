@@ -1,0 +1,79 @@
+body {
+    margin:0;
+    background-image:url(/img/OIUGF60.jpg);
+    background-repeat:repeat;
+    background-size:300px;
+    font-family:Montserrat, sans-serif;
+}
+a, a:hover{
+    text-decoration: none;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-product{
+    height: 500px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    border-radius: 40px;
+    background-color: #fff;
+}
+.objectImage {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5%;
+}
+#img-dm{
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+    border-radius: 20px;
+}
+.search-bar{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 2.5%;
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    box-shadow: #000;
+
+}
+#card-text{
+    overflow: hidden;
+    height: 4ch;
+}
+#card-body{
+    height: 400px;
+    border-radius: 20px;
+}
+.brand {
+    color:#dc3545;
+    margin:0;
+    font-weight:700;
+    text-shadow:#000;
+    font-style:italic;
+}
+footer{
+    background-color: #fff;
+    box-shadow: #000;
+    width: 100%;
+}
