@@ -19,9 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('name', 100);
             $table->float('price');
             $table->text('description');
-            $table->boolean('avaliable');
             $table->integer('minutes');
-            $table->integer('sales');
+            $table->boolean('avaliable');
 
         });
     }

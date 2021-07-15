@@ -1,45 +1,62 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
-<div class="container-form" style="margin-top: 2.5%;">
-    <h1 style="color: #ffff;">Cadastre o produto:</h1>
-    <form style="margin-bottom: 5%;" action="/products" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nome</span>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Ex: X-Iggor." aria-describedby="basic-addon1">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Cadastre um produto') }}</div>
+                <div class="card-body">
+                    <form action="/products" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                            <div class="col-md-6">
+                                <input required id="name" type="text" class="form-control" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Descrição') }}</label>
+                            <div class="col-md-6">
+                                <textarea required type="text" class="form-control" id="description" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Minutos') }}</label>
+                            <div class="col-md-6">
+                                <input required id="minutes" type="number" class="form-control" name="minutes">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Preço') }}</label>
+                            <div class="col-md-6">
+                                <input required id="price" type="number" class="form-control" name="price">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+                            <div>
+                                <input required type="file" class="col-md-6" id="image" name="image">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Disponível') }}</label>
+                            <select required class="form-select" name="avaliable">
+                                <option value="0">Não</option>
+                                <option value="1">Sim</option>
+                            </select>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Cadastrar produto') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Preço</span>
-            <input type="number" class="form-control" step="0.5" id="price" name="price" min="1" max="100">
-            <span class="input-group-text" id="basic-addon1">R$.</span>
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Minutos</span>
-            <input type="number" class="form-control" id="minutes" name="minutes" min="10" max="60">
-            <span class="input-group-text" id="basic-addon1">Min.</span>
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Descrição</span>
-            <textarea class="form-control" aria-label="With textarea" id="description" name="description" placeholder="Ex: Pão com gergelin, 4 ovos..."></textarea>
-        </div>
-        <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Disponível?</span>
-            <select id="avaliable" name="avaliable" class="form-control">
-                <option value="0" selected>Não.</option>
-                <option value="1" selected>Sim.</option>
-            </select>
-        </div>
-
-
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupFile01">Foto do produto</label>
-            <input type="file" class="form-control" id="image" name="image">
-        </div>
-        <input type="hidden" name="sales" id="sales" value="0" >
-        <input class="btn btn-danger" type="submit" value="Cadastrar produto">
-        <a type="button" href="/" class="btn btn-danger">Voltar</a>
-    </form>
-
+    </div>
 </div>
 @endsection
